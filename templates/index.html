@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Play Tennis Prediction</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background:#f4f4f4;
+            text-align:center;
+            margin-top:50px;
+        }
+
+        .container{
+            width:400px;
+            margin:auto;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        select,button{
+            width:100%;
+            padding:10px;
+            margin-top:10px;
+        }
+
+        button{
+            background:green;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+
+        h2{
+            color:green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Play Tennis Predictor</h1>
+
+    <form action="/predict" method="post">
+
+        <label>Outlook</label>
+        <select name="outlook">
+            <option>Sunny</option>
+            <option>Overcast</option>
+            <option>Rain</option>
+        </select>
+
+        <label>Temperature</label>
+        <select name="temperature">
+            <option>Hot</option>
+            <option>Mild</option>
+            <option>Cool</option>
+        </select>
+
+        <label>Humidity</label>
+        <select name="humidity">
+            <option>High</option>
+            <option>Normal</option>
+        </select>
+
+        <label>Wind</label>
+        <select name="wind">
+            <option>Weak</option>
+            <option>Strong</option>
+        </select>
+
+        <button type="submit">Predict</button>
+
+    </form>
+
+    <h2>{{ prediction_text }}</h2>
+
+</div>
+
+</body>
+</html>
